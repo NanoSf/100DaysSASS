@@ -1,0 +1,155 @@
+.dia-10{
+    position: relative;
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    background-color: #4C4C4C;
+    display: grid;
+    place-items: center;
+    color: rgb(255, 255, 255);
+
+    &__circulo{
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background-color: #242424;
+        border: 7px solid rgb(58, 58, 58);
+        
+        display: grid;
+        place-items: center;
+
+        &-esfera-1{
+            top: 0;
+            left: 0;
+        }
+
+        &-esfera-2{
+            top: 0;
+            right: 0;
+        }
+
+        &-esfera-3{
+            bottom: 0;
+            right: 0;
+        }
+
+        &-esfera-4{
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__hora{
+        width: 200px;
+        height: 200px;
+        color: white;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+
+        &-diaMesAnio{
+            font-size: 12px;
+            font-weight: 400;
+
+            &--text-big{
+                font-size: 40px;
+                font-weight: 700;
+            }
+        }
+
+        &-otros{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+
+            &-calorias{
+                font-size: 12px;
+            }
+        }
+    }
+
+    &__spinner-svg{
+        position: absolute;
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        transform: scale(1.12);
+        
+
+        &-circulo{ 
+            fill: none;
+            stroke: #f85b5b;
+            stroke-width: 3;
+            stroke-dasharray: 625;
+            
+            transform-origin: center center;
+            transform: rotate(-90deg);
+
+            &--activo{
+                animation: spinner 7s linear infinite;
+            }
+        }
+    }
+}
+
+.dia-10__hora-otros-latidos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-corazon   {
+        width:12px;
+        height: 12px;
+        color: #F85B5B;
+        animation: latido .5s ease-in-out infinite alternate;
+    }
+    &-num{
+        font-size: 12px;
+    }
+}
+
+.esfera{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    transform: rotate(calc(5deg * var(--esfera)));
+}
+
+.punto{
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+@keyframes latido {
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1.2);
+    }
+}
+
+@keyframes spinner{
+    0% {
+		stroke-dashoffset: 625;
+		transform: rotate(-90deg);
+	}
+    50%{
+        stroke-dashoffset: 0;
+		transform: rotate(-90deg);
+    }
+	100% {
+		stroke-dashoffset: 625;
+		transform: rotate(-90deg);
+	}
+}

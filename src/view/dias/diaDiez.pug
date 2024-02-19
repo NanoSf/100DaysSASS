@@ -1,0 +1,19 @@
+div.dia-10
+    .dia-10__circulo
+        -for (let num = 0; num < 18; num++)
+            div(class=`esfera dia-10__circulo-contenedor` style=`--esfera:${num}`)
+                -for(let px = 1; px <5; px++)
+                    div(class=`punto dia-10__circulo-esfera-${px}`)
+
+    svg(class="dia-10__spinner-svg")
+        circle(class="dia-10__spinner-svg-circulo" cx="115" cy="115" r="99.5")
+
+    .dia-10__hora
+        h3.dia-10__hora-diaMesAnio MON 15 JAN 2015
+        h3.dia-10__hora-diaMesAnio.dia-10__hora-diaMesAnio--text-big 11:42
+        .dia-10__hora-otros
+            .dia-10__hora-otros-latidos
+                svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 dia-10__hora-otros-latidos-corazon")
+                    path(d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z")
+                p.dia-10__hora-otros-latidos-num 81
+            p.dia-10__hora-otros-calorias 1248 KCAL
