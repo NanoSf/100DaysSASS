@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PugPlugin = require('pug-plugin');
 
 module.exports = {
   mode: 'development',
@@ -14,7 +15,7 @@ module.exports = {
       {
         test: /\.pug$/,
         include:  path.resolve(__dirname, 'src', 'view'),
-        use: 'pug-loader',
+        use: PugPlugin.loader,
       },
       {
         test: /\.scss$/,
