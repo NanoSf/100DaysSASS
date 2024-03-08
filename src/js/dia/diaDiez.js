@@ -13,4 +13,6 @@ const agregarAnimacion = () => {
     })
 }
 
+agregarAnimacion();
+
 export default agregarAnimacion;

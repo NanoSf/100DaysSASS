@@ -18,4 +18,6 @@ const animacionDiaOnce = () => {
     })
 }
 
+animacionDiaOnce();
+
 export default animacionDiaOnce;

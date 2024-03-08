@@ -29,7 +29,8 @@
 .container-12__message-p{
     line-height: 1.5;
     margin: 0;
-
+    position: relative;
+    z-index: 100;
     &-span{
         position: relative;
         display: inline-block;
@@ -48,10 +49,15 @@
     }
 
     &::before{
-        content: '"';
-        font-size: 100px;
-        display: block;
-        background-color: #6AC2E3;
+        content: '„';
+        z-index: -1;
+        position: absolute;
+        top: -80px;
+        left: -30px;
+        font-size: 250px;
+        font-family: Arial;
+        line-height: 0;
+        color: #6AC2E3;
     }
     
 }
