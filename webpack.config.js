@@ -1,11 +1,13 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PugPlugin = require('pug-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/index.js',
+  entry: {
+    script: './src/js/index.js',
+    pug: './src/view/index.pug'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js'
@@ -25,13 +27,13 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new PugPlugin({
       template: './src/view/index.pug',
       filename: 'index.html',
       hash: true
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.css'
+      filename: 'app.css'
     })
   ],
   devServer: {
